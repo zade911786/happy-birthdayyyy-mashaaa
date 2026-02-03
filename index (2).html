@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения, Маша! 💝</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Pacifico&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rose-pink: #FFB6C1;
+            --soft-pink: #FFC0CB;
+            --blush: #FFE4E1;
+            --peach: #FFDAB9;
+            --lavender: #E6E6FA;
+            --baby-pink: #FFD1DC;
+            --cream: #FFF5EE;
+            --white: #FFFFFF;
+            --rose-gold: #B76E79;
+            --soft-purple: #DDA0DD;
+        }
+
+        /* Performance optimization: Use will-change sparingly */
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: radial-gradient(ellipse at top, #FFE4E1, #FFB6C1 40%, #DDA0DD 80%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            animation: backgroundGlow 10s ease-in-out infinite;
+        }
+
+        @keyframes backgroundGlow {
+            0%, 100% {
+                background: radial-gradient(ellipse at top, #FFE4E1, #FFB6C1 40%, #DDA0DD 80%);
+            }
+            50% {
+                background: radial-gradient(ellipse at top, #FFD1DC, #FFC0CB 40%, #E6E6FA 80%);
+            }
+        }
+
+        /* Optimized Background Effects */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            animation: orbFloat 20s infinite ease-in-out;
+            will-change: transform;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+            25% {
+                transform: translate3d(100px, -100px, 0) scale(1.2);
+            }
+            50% {
+                transform: translate3d(-80px, 80px, 0) scale(0.9);
+            }
+            75% {
+                transform: translate3d(120px, 50px, 0) scale(1.1);
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #FFD1DC, 0 0 20px #FFB6C1;
+            animation: sparkleFloat 6s infinite;
+            will-change: transform, opacity;
+        }
+
+        @keyframes sparkleFloat {
+            0% {
+                transform: translate3d(0, 100vh, 0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate3d(0, -100vh, 0) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Welcome Modal - Optimized */
+        .welcome-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 182, 193, 0.98);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: fadeIn 1s ease-in;
+            backdrop-filter: blur(10px);
+        }
+
+        .welcome-modal.hidden {
+            animation: fadeOut 1s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        .welcome-content {
+            text-align: center;
+            padding: 3rem;
+            animation: scaleIn 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .welcome-text {
+            font-family: 'Pacifico', cursive;
+            font-size: 4rem;
+            background: linear-gradient(135deg, #FFB6C1 0%, #DDA0DD 50%, #FFD1DC 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease infinite, textGlow 2s ease-in-out infinite;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 20px rgba(255, 182, 193, 0.8));
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes textGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 20px rgba(255, 182, 193, 0.8));
+            }
+            50% {
+                filter: drop-shadow(0 0 40px rgba(221, 160, 221, 1)) drop-shadow(0 0 60px rgba(255, 182, 193, 0.6));
+            }
+        }
+
+        .welcome-subtext {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: white;
+            margin-top: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255, 209, 220, 0.8), 0 0 40px rgba(255, 182, 193, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.05); }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            opacity: 0;
+            animation: containerFadeIn 2s ease-in 3s forwards;
+        }
+
+        @keyframes containerFadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Music Control - Enhanced */
+        .music-control {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: linear-gradient(135deg, #FFD1DC, #FFB6C1);
+            border: 3px solid white;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 
+                0 10px 40px rgba(255, 182, 193, 0.6),
+                0 0 30px rgba(255, 209, 220, 0.8),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            animation: musicPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes musicPulse {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 
+                    0 10px 40px rgba(255, 182, 193, 0.6),
+                    0 0 30px rgba(255, 209, 220, 0.8),
+                    inset 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                transform: scale(1.1); 
+                box-shadow: 
+                    0 15px 50px rgba(255, 182, 193, 0.8),
+                    0 0 50px rgba(221, 160, 221, 1),
+                    inset 0 0 30px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .music-control:hover {
+            transform: scale(1.15) rotate(15deg);
+            box-shadow: 
+                0 15px 50px rgba(255, 182, 193, 0.9),
+                0 0 60px rgba(255, 209, 220, 1);
+        }
+
+        .music-control svg {
+            width: 35px;
+            height: 35px;
+            fill: #B76E79;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .music-control.playing {
+            animation: spin 3s linear infinite, musicPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Music Bars Visualization */
+        .music-bars {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 3px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .music-control.playing .music-bars {
+            opacity: 1;
+        }
+
+        .music-bar {
+            width: 3px;
+            height: 10px;
+            background: white;
+            border-radius: 2px;
+            animation: barJump 0.8s ease-in-out infinite;
+        }
+
+        .music-bar:nth-child(1) { animation-delay: 0s; }
+        .music-bar:nth-child(2) { animation-delay: 0.2s; }
+        .music-bar:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes barJump {
+            0%, 100% { height: 10px; }
+            50% { height: 20px; }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: slideDown 1.5s ease-out 3.5s backwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 5rem;
+            background: linear-gradient(135deg, #FFB6C1, #DDA0DD, #FFD1DC);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease infinite, headerGlow 3s ease-in-out infinite;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        @keyframes headerGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 30px rgba(255, 182, 193, 0.8)) 
+                        drop-shadow(0 5px 15px rgba(221, 160, 221, 0.6));
+            }
+            50% {
+                filter: drop-shadow(0 0 50px rgba(255, 209, 220, 1)) 
+                        drop-shadow(0 5px 25px rgba(255, 182, 193, 0.9))
+                        drop-shadow(0 0 70px rgba(221, 160, 221, 0.8));
+            }
+        }
+
+        .date-banner {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: white;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.7), rgba(221, 160, 221, 0.7));
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            display: inline-block;
+            border: 3px solid white;
+            box-shadow: 
+                0 8px 32px rgba(255, 182, 193, 0.6),
+                0 0 40px rgba(255, 209, 220, 0.8),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: float-soft 3s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 2px 10px rgba(255, 182, 193, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .date-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes float-soft {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Photo Section - Optimized */
+        .photo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 4rem 0;
+            position: relative;
+            min-height: 600px;
+            animation: zoomIn 2s ease-out 4s backwards;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .photo-container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .photo-frame {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 8px solid white;
+            overflow: hidden;
+            box-shadow: 
+                0 0 0 15px rgba(255, 182, 193, 0.6),
+                0 20px 60px rgba(255, 182, 193, 0.6),
+                0 0 100px rgba(255, 209, 220, 0.8),
+                inset 0 0 50px rgba(255, 255, 255, 0.3);
+            position: relative;
+            animation: photoGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes photoGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 0 15px rgba(255, 182, 193, 0.6),
+                    0 20px 60px rgba(255, 182, 193, 0.6),
+                    0 0 100px rgba(255, 209, 220, 0.8),
+                    inset 0 0 50px rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 0 15px rgba(221, 160, 221, 0.8),
+                    0 20px 60px rgba(221, 160, 221, 0.8),
+                    0 0 120px rgba(255, 182, 193, 1),
+                    inset 0 0 60px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Optimized SVG Animations */
+        .heart {
+            position: absolute;
+            animation: heartFloat 6s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        @keyframes heartFloat {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translate3d(30px, -30px, 0) rotate(15deg) scale(1.1);
+            }
+            50% {
+                transform: translate3d(-20px, -40px, 0) rotate(-10deg) scale(0.95);
+            }
+            75% {
+                transform: translate3d(-30px, -20px, 0) rotate(10deg) scale(1.05);
+            }
+        }
+
+        .heart1 { top: -80px; left: -100px; width: 80px; animation-delay: 0s; }
+        .heart2 { top: -90px; right: -90px; width: 70px; animation-delay: 1.5s; }
+        .heart3 { bottom: -60px; left: -110px; width: 90px; animation-delay: 3s; }
+        .heart4 { bottom: -70px; right: -100px; width: 75px; animation-delay: 4.5s; }
+        .heart5 { top: 50%; left: -120px; width: 60px; animation-delay: 2s; }
+        .heart6 { top: 50%; right: -120px; width: 65px; animation-delay: 3.5s; }
+
+        .heart svg {
+            filter: drop-shadow(0 5px 15px rgba(255, 182, 193, 0.8)) drop-shadow(0 0 30px rgba(255, 209, 220, 0.6));
+        }
+
+        /* Balloons */
+        .balloon {
+            position: absolute;
+            animation: balloonFloat 8s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        @keyframes balloonFloat {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate3d(-20px, -40px, 0) rotate(-8deg);
+            }
+            50% {
+                transform: translate3d(15px, -60px, 0) rotate(8deg);
+            }
+            75% {
+                transform: translate3d(-15px, -40px, 0) rotate(-5deg);
+            }
+        }
+
+        .balloon1 { top: -150px; left: 50%; margin-left: -180px; width: 90px; animation-delay: 0s; }
+        .balloon2 { top: -120px; left: 50%; margin-left: 90px; width: 100px; animation-delay: 1s; }
+        .balloon3 { top: -130px; left: 50%; margin-left: -50px; width: 85px; animation-delay: 2s; }
+
+        .balloon svg {
+            filter: drop-shadow(0 10px 20px rgba(255, 182, 193, 0.6));
+        }
+
+        /* Cute Cat */
+        .cute-cat {
+            position: absolute;
+            bottom: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            animation: catWiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes catWiggle {
+            0%, 100% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+            25% {
+                transform: translateX(-50%) rotate(-5deg) translateY(-5px);
+            }
+            75% {
+                transform: translateX(-50%) rotate(5deg) translateY(-5px);
+            }
+        }
+
+        .cute-cat svg {
+            filter: drop-shadow(0 5px 15px rgba(255, 182, 193, 0.6));
+        }
+
+        /* Gift Section */
+        .gift-section {
+            text-align: center;
+            margin: 5rem 0;
+            animation: slideUp 2s ease-out 4.5s backwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .gift-button {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD1DC 0%, #FFB6C1 50%, #DDA0DD 100%);
+            color: white;
+            border: none;
+            padding: 2rem 4rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 
+                0 10px 40px rgba(255, 182, 193, 0.6),
+                0 0 50px rgba(255, 209, 220, 0.8),
+                inset 0 0 30px rgba(255, 255, 255, 0.4);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+            border: 4px solid white;
+            text-shadow: 0 2px 10px rgba(183, 110, 121, 0.6);
+        }
+
+        .gift-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .gift-button:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+
+        .gift-button:hover {
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 
+                0 20px 60px rgba(255, 182, 193, 0.8),
+                0 0 80px rgba(221, 160, 221, 1),
+                inset 0 0 40px rgba(255, 255, 255, 0.6);
+        }
+
+        .gift-button:active {
+            transform: scale(0.95);
+        }
+
+        .gift-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* OPTIMIZED Gift Card Modal */
+        .gift-card-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 182, 193, 0.95);
+            backdrop-filter: blur(20px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .gift-card-modal.active {
+            display: flex;
+        }
+
+        /* OPTIMIZED Gift Card - Smooth Scrolling */
+        .gift-card {
+            background: linear-gradient(135deg, #FFF5EE 0%, #FFE4E1 50%, white 100%);
+            border: 10px solid #FFB6C1;
+            border-radius: 30px;
+            padding: 4rem;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            box-shadow: 
+                0 30px 80px rgba(255, 182, 193, 0.8),
+                0 0 100px rgba(255, 209, 220, 1),
+                inset 0 0 50px rgba(255, 255, 255, 0.5);
+            animation: cardReveal 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-height: 90vh;
+            overflow-y: auto;
+            /* PERFORMANCE FIX: Hardware acceleration for smooth scrolling */
+            -webkit-overflow-scrolling: touch;
+            transform: translateZ(0);
+            will-change: scroll-position;
+        }
+
+        /* Custom Scrollbar for Gift Card */
+        .gift-card::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .gift-card::-webkit-scrollbar-track {
+            background: rgba(255, 209, 220, 0.2);
+            border-radius: 10px;
+        }
+
+        .gift-card::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #FFB6C1, #DDA0DD);
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+
+        .gift-card::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #DDA0DD, #FFB6C1);
+        }
+
+        @keyframes cardReveal {
+            0% {
+                transform: scale(0) rotateY(180deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotateY(0deg);
+                opacity: 1;
+            }
+        }
+
+        .card-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #FFB6C1, #DDA0DD);
+            border: 3px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.6), 0 0 30px rgba(255, 209, 220, 0.8);
+            z-index: 10;
+        }
+
+        .card-close:hover {
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 8px 20px rgba(221, 160, 221, 0.8), 0 0 40px rgba(255, 182, 193, 1);
+        }
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #FFB6C1;
+            padding-bottom: 1rem;
+        }
+
+        .card-header h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #FFB6C1, #DDA0DD);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 2px 8px rgba(255, 182, 193, 0.4));
+            animation: headerPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes headerPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .card-header p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #B76E79;
+            text-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+            animation: colorShift 4s ease-in-out infinite;
+        }
+
+        @keyframes colorShift {
+            0%, 100% { color: #B76E79; }
+            50% { color: #DDA0DD; }
+        }
+
+        /* OPTIMIZED Message Container */
+        .card-message {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.4rem;
+            line-height: 2.4;
+            color: #B76E79;
+            text-align: left;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 209, 220, 0.3), rgba(255, 255, 255, 0.5));
+            border-radius: 25px;
+            border: 2px solid rgba(255, 182, 193, 0.4);
+            box-shadow: 
+                inset 0 0 30px rgba(255, 182, 193, 0.2),
+                0 8px 32px rgba(255, 182, 193, 0.3);
+            /* PERFORMANCE FIX: Remove will-change, use transform instead */
+            transform: translateZ(0);
+        }
+
+        .card-message p {
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            /* PERFORMANCE FIX: Use transform for animations */
+            transform: translateZ(0);
+        }
+
+        .card-message p:nth-child(1) { animation-delay: 0.2s; }
+        .card-message p:nth-child(2) { animation-delay: 0.4s; }
+        .card-message p:nth-child(3) { animation-delay: 0.6s; }
+        .card-message p:nth-child(4) { animation-delay: 0.8s; }
+        .card-message p:nth-child(5) { animation-delay: 1s; }
+        .card-message p:nth-child(6) { animation-delay: 1.2s; }
+        .card-message p:nth-child(7) { animation-delay: 1.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 20px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .card-message strong {
+            color: #DDA0DD;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(221, 160, 221, 0.5);
+            background: linear-gradient(135deg, #DDA0DD, #FFB6C1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Enhanced Footer */
+        .card-footer {
+            text-align: center;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cute-gif {
+            width: 150px;
+            height: auto;
+            border-radius: 20px;
+            border: 4px solid #FFB6C1;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5), 0 0 40px rgba(255, 209, 220, 0.6);
+            animation: bounce 2s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .cute-gif:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .smiley {
+            width: 100px;
+            animation: rotate-gentle 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 209, 220, 0.8));
+            transition: transform 0.3s ease;
+        }
+
+        .smiley:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes rotate-gentle {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        /* Decorative corners with animation */
+        .card-corner {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 5px solid #DDA0DD;
+            opacity: 0.7;
+            animation: cornerGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes cornerGlow {
+            0%, 100% { 
+                opacity: 0.7;
+                border-color: #DDA0DD;
+            }
+            50% { 
+                opacity: 1;
+                border-color: #FFB6C1;
+            }
+        }
+
+        .card-corner.top-left {
+            top: 15px;
+            left: 15px;
+            border-right: none;
+            border-bottom: none;
+            border-radius: 15px 0 0 0;
+        }
+
+        .card-corner.top-right {
+            top: 15px;
+            right: 15px;
+            border-left: none;
+            border-bottom: none;
+            border-radius: 0 15px 0 0;
+        }
+
+        .card-corner.bottom-left {
+            bottom: 15px;
+            left: 15px;
+            border-right: none;
+            border-top: none;
+            border-radius: 0 0 0 15px;
+        }
+
+        .card-corner.bottom-right {
+            bottom: 15px;
+            right: 15px;
+            border-left: none;
+            border-top: none;
+            border-radius: 0 0 15px 0;
+        }
+
+        /* OPTIMIZED Floating hearts - Reduced quantity */
+        .modal-heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            animation: floatingHeart 4s ease-in infinite;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        @keyframes floatingHeart {
+            0% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translate3d(0, -200px, 0) rotate(180deg) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .modal-heart svg {
+            filter: drop-shadow(0 0 8px rgba(255, 182, 193, 0.8));
+        }
+
+        /* New: Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #FFB6C1;
+            position: absolute;
+            animation: confettiFall 3s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translate3d(0, -100%, 0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate3d(var(--x), 100vh, 0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* New: Star Twinkle Effect */
+        .star {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: white;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .welcome-text {
+                font-size: 2.5rem;
+            }
+            
+            .welcome-subtext {
+                font-size: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 3rem;
+            }
+
+            .date-banner {
+                font-size: 1.5rem;
+                padding: 0.8rem 2rem;
+            }
+
+            .photo-frame {
+                width: 200px;
+                height: 200px;
+            }
+
+            .heart, .balloon {
+                width: 40px !important;
+            }
+
+            .gift-button {
+                font-size: 1.5rem;
+                padding: 1.5rem 3rem;
+            }
+
+            .gift-card {
+                padding: 2rem;
+                width: 95%;
+            }
+
+            .card-header h2 {
+                font-size: 2rem;
+            }
+
+            .card-message {
+                font-size: 1.2rem;
+                padding: 1.5rem;
+                line-height: 2;
+            }
+
+            .music-control {
+                width: 60px;
+                height: 60px;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .music-control svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .cute-gif, .smiley {
+                width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Glow Effects -->
+    <div class="bg-glow" id="bgGlow"></div>
+
+    <!-- Welcome Modal -->
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="welcome-content">
+            <div class="welcome-text">Сюрприз для тебя</div>
+            <div class="welcome-subtext">милая Маша ✨</div>
+        </div>
+    </div>
+
+    <!-- Music Control with Bars -->
+    <div class="music-control" id="musicControl" title="Музыка">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+        <div class="music-bars">
+            <div class="music-bar"></div>
+            <div class="music-bar"></div>
+            <div class="music-bar"></div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>С Днём Рождения!</h1>
+            <div class="date-banner">4 Февраля ❤️</div>
+        </div>
+
+        <!-- Photo Section -->
+        <div class="photo-section">
+            <div class="photo-container">
+                <div class="photo-frame">
+                    <img src="https://filetolinkneon1-5b71323869de.herokuapp.com/stream/1287329?hash=7b3f30&d=true" alt="Маша">
+                </div>
+                
+                <!-- Custom SVG Hearts -->
+                <div class="heart heart1">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heartGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DDA0DD;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50,90 C50,90 10,65 10,40 C10,25 20,15 32,15 C40,15 45,20 50,30 C55,20 60,15 68,15 C80,15 90,25 90,40 C90,65 50,90 50,90 Z" fill="url(#heartGrad1)"/>
+                    </svg>
+                </div>
+                <div class="heart heart2">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heartGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFD1DC;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFB6C1;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50,90 C50,90 10,65 10,40 C10,25 20,15 32,15 C40,15 45,20 50,30 C55,20 60,15 68,15 C80,15 90,25 90,40 C90,65 50,90 50,90 Z" fill="url(#heartGrad2)"/>
+                    </svg>
+                </div>
+                <div class="heart heart3">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heartGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFC0CB;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#E6E6FA;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50,90 C50,90 10,65 10,40 C10,25 20,15 32,15 C40,15 45,20 50,30 C55,20 60,15 68,15 C80,15 90,25 90,40 C90,65 50,90 50,90 Z" fill="url(#heartGrad3)"/>
+                    </svg>
+                </div>
+                <div class="heart heart4">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heartGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFD1DC;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50,90 C50,90 10,65 10,40 C10,25 20,15 32,15 C40,15 45,20 50,30 C55,20 60,15 68,15 C80,15 90,25 90,40 C90,65 50,90 50,90 Z" fill="url(#heartGrad4)"/>
+                    </svg>
+                </div>
+                <div class="heart heart5">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heartGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#DDA0DD;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFB6C1;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50,90 C50,90 10,65 10,40 C10,25 20,15 32,15 C40,15 45,20 50,30 C55,20 60,15 68,15 C80,15 90,25 90,40 C90,65 50,90 50,90 Z" fill="url(#heartGrad5)"/>
+                    </svg>
+                </div>
+                <div class="heart heart6">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heartGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFD1DC;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DDA0DD;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50,90 C50,90 10,65 10,40 C10,25 20,15 32,15 C40,15 45,20 50,30 C55,20 60,15 68,15 C80,15 90,25 90,40 C90,65 50,90 50,90 Z" fill="url(#heartGrad6)"/>
+                    </svg>
+                </div>
+
+                <!-- Custom SVG Balloons -->
+                <div class="balloon balloon1">
+                    <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="balloonGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#FFD1DC;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFB6C1;stop-opacity:0.8" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="50" cy="50" rx="35" ry="45" fill="url(#balloonGrad1)" stroke="white" stroke-width="2"/>
+                        <path d="M50,95 Q50,110 50,120" stroke="#FFB6C1" stroke-width="2" fill="none"/>
+                        <ellipse cx="50" cy="97" rx="8" ry="3" fill="#DDA0DD"/>
+                        <ellipse cx="35" cy="35" rx="10" ry="15" fill="white" opacity="0.4"/>
+                    </svg>
+                </div>
+                <div class="balloon balloon2">
+                    <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="balloonGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#DDA0DD;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#E6E6FA;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DDA0DD;stop-opacity:0.8" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="50" cy="50" rx="35" ry="45" fill="url(#balloonGrad2)" stroke="white" stroke-width="2"/>
+                        <path d="M50,95 Q50,110 50,120" stroke="#DDA0DD" stroke-width="2" fill="none"/>
+                        <ellipse cx="50" cy="97" rx="8" ry="3" fill="#FFB6C1"/>
+                        <ellipse cx="35" cy="35" rx="10" ry="15" fill="white" opacity="0.4"/>
+                    </svg>
+                </div>
+                <div class="balloon balloon3">
+                    <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="balloonGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFD1DC;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#FFC0CB;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFD1DC;stop-opacity:0.8" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="50" cy="50" rx="35" ry="45" fill="url(#balloonGrad3)" stroke="white" stroke-width="2"/>
+                        <path d="M50,95 Q50,110 50,120" stroke="#FFD1DC" stroke-width="2" fill="none"/>
+                        <ellipse cx="50" cy="97" rx="8" ry="3" fill="#E6E6FA"/>
+                        <ellipse cx="35" cy="35" rx="10" ry="15" fill="white" opacity="0.4"/>
+                    </svg>
+                </div>
+
+                <!-- Cute Cat Animation -->
+                <div class="cute-cat">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="catGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DDA0DD;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Cat body -->
+                        <ellipse cx="100" cy="120" rx="50" ry="40" fill="url(#catGrad)"/>
+                        <!-- Cat head -->
+                        <circle cx="100" cy="70" r="35" fill="url(#catGrad)"/>
+                        <!-- Ears -->
+                        <path d="M70,50 L65,25 L85,45 Z" fill="url(#catGrad)"/>
+                        <path d="M130,50 L135,25 L115,45 Z" fill="url(#catGrad)"/>
+                        <!-- Ear insides -->
+                        <path d="M72,47 L70,32 L80,45 Z" fill="#FFD1DC"/>
+                        <path d="M128,47 L130,32 L120,45 Z" fill="#FFD1DC"/>
+                        <!-- Eyes -->
+                        <ellipse cx="85" cy="70" rx="8" ry="12" fill="white"/>
+                        <ellipse cx="115" cy="70" rx="8" ry="12" fill="white"/>
+                        <ellipse cx="85" cy="73" rx="4" ry="7" fill="#333">
+                            <animate attributeName="ry" values="7;1;7" dur="3s" repeatCount="indefinite"/>
+                        </ellipse>
+                        <ellipse cx="115" cy="73" rx="4" ry="7" fill="#333">
+                            <animate attributeName="ry" values="7;1;7" dur="3s" repeatCount="indefinite"/>
+                        </ellipse>
+                        <!-- Nose -->
+                        <path d="M100,80 L95,85 L105,85 Z" fill="#B76E79"/>
+                        <!-- Whiskers -->
+                        <line x1="60" y1="75" x2="30" y2="70" stroke="white" stroke-width="2"/>
+                        <line x1="60" y1="80" x2="30" y2="80" stroke="white" stroke-width="2"/>
+                        <line x1="140" y1="75" x2="170" y2="70" stroke="white" stroke-width="2"/>
+                        <line x1="140" y1="80" x2="170" y2="80" stroke="white" stroke-width="2"/>
+                        <!-- Paws -->
+                        <ellipse cx="75" cy="155" rx="12" ry="8" fill="url(#catGrad)"/>
+                        <ellipse cx="125" cy="155" rx="12" ry="8" fill="url(#catGrad)"/>
+                        <!-- Tail -->
+                        <path d="M140,130 Q170,120 175,100" stroke="url(#catGrad)" stroke-width="12" fill="none" stroke-linecap="round">
+                            <animateTransform attributeName="transform" type="rotate" values="0 140 130; 10 140 130; 0 140 130; -10 140 130; 0 140 130" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <!-- Heart near paw -->
+                        <path d="M72,145 C72,145 65,140 65,135 C65,132 67,130 69,130 C70,130 71,131 72,133 C73,131 74,130 75,130 C77,130 79,132 79,135 C79,140 72,145 72,145 Z" fill="#FFD1DC">
+                            <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gift Button Section -->
+        <div class="gift-section">
+            <button class="gift-button" id="giftButton">
+                <span>Нажми сюда, Маша! 🎁</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Gift Card Modal -->
+    <div class="gift-card-modal" id="giftCardModal">
+        <div class="gift-card">
+            <div class="card-corner top-left"></div>
+            <div class="card-corner top-right"></div>
+            <div class="card-corner bottom-left"></div>
+            <div class="card-corner bottom-right"></div>
+            
+            <div class="card-close" id="closeCard">×</div>
+            
+            <div class="card-header">
+                <h2>Для самой прекрасной Маши</h2>
+                <p>С любовью из Мексики 🇲🇽 💫 🇷🇺</p>
+            </div>
+
+            <div class="card-message">
+                <p style="text-align: center; font-family: 'Pacifico', cursive; font-size: 2.2rem; margin-bottom: 2rem; color: #DDA0DD;">
+                    <strong>С Днём Рождения, Маша ✨🎂</strong>
+                </p>
+                
+                <p>Как красиво, когда два человека из разных мест встречаются вот так. Мы ещё не так много разговаривали, но каждый маленький момент с тобой уже ощущается особенным.</p>
+                
+                <p>Ты неоспоримо красивая и великолепная, но есть что-то ещё более привлекательное в твоей спокойной энергии и загадке того, кто ты есть. Мне очень хотелось бы узнать тебя больше — твои мысли, твой мир, маленькие вещи, которые заставляют тебя улыбаться.</p>
+                
+                <p>В твой день рождения я надеюсь, что ты чувствуешь себя восхищённой, ценной и окружённой хорошими вибрациями.</p>
+                
+                <p>Возможно, этот год принесёт нам больше разговоров, больше смеха и более глубокую связь через расстояние 🌙✨</p>
+                
+                <p style="text-align: center; font-size: 1.8rem; margin-top: 2.5rem; font-family: 'Dancing Script', cursive;">
+                    <strong>Наслаждайся своим днём, красавица.</strong>
+                </p>
+                
+                <p style="text-align: right; font-size: 1.6rem; margin-top: 2rem; font-style: italic; color: #B76E79;">
+                    — Зейд 💝
+                </p>
+            </div>
+
+            <div class="card-footer">
+                <img src="https://filetolinkneon1-5b71323869de.herokuapp.com/stream/1287335?hash=50d434&d=true" class="cute-gif" alt="Cute Cat">
+                <img src="https://filetolinkneon1-5b71323869de.herokuapp.com/stream/1287333?hash=b25dfb&d=true" class="smiley" alt="Smiley">
+            </div>
+            
+            <!-- Floating Hearts Container -->
+            <div id="modalHeartsContainer"></div>
+        </div>
+    </div>
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="birthdayMusic" loop style="display:none;">
+        <source src="https://image2url.com/r2/default/audio/1770144410483-f3dceb47-07a0-468c-abd7-411e42bf2577.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // PERFORMANCE OPTIMIZATION: Throttle function for intensive operations
+        function throttle(func, delay) {
+            let lastCall = 0;
+            return function(...args) {
+                const now = Date.now();
+                if (now - lastCall >= delay) {
+                    lastCall = now;
+                    return func(...args);
+                }
+            }
+        }
+
+        // Create glowing orbs and sparkles (REDUCED for performance)
+        const bgGlow = document.getElementById('bgGlow');
+        
+        // Create glowing orbs (reduced from 5 to 3)
+        const orbColors = ['#FFB6C1', '#DDA0DD', '#FFD1DC', '#E6E6FA'];
+        for (let i = 0; i < 3; i++) {
+            const orb = document.createElement('div');
+            orb.className = 'glow-orb';
+            orb.style.width = (Math.random() * 200 + 150) + 'px';
+            orb.style.height = orb.style.width;
+            orb.style.left = Math.random() * 100 + '%';
+            orb.style.top = Math.random() * 100 + '%';
+            orb.style.background = orbColors[Math.floor(Math.random() * orbColors.length)];
+            orb.style.animationDelay = Math.random() * 10 + 's';
+            orb.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            bgGlow.appendChild(orb);
+        }
+
+        // Create sparkles (reduced from 40 to 20)
+        for (let i = 0; i < 20; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 6 + 's';
+            sparkle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            bgGlow.appendChild(sparkle);
+        }
+
+        // Add stars to background
+        for (let i = 0; i < 15; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            bgGlow.appendChild(star);
+        }
+
+        // Welcome Modal
+        const welcomeModal = document.getElementById('welcomeModal');
+        setTimeout(() => {
+            welcomeModal.classList.add('hidden');
+        }, 3000);
+
+        // Music Control
+        const musicControl = document.getElementById('musicControl');
+        const birthdayMusic = document.getElementById('birthdayMusic');
+        let isPlaying = false;
+
+        musicControl.addEventListener('click', () => {
+            if (isPlaying) {
+                birthdayMusic.pause();
+                musicControl.classList.remove('playing');
+            } else {
+                birthdayMusic.play();
+                musicControl.classList.add('playing');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Auto-play music after welcome modal (with user interaction fallback)
+        setTimeout(() => {
+            birthdayMusic.play().then(() => {
+                musicControl.classList.add('playing');
+                isPlaying = true;
+            }).catch(() => {
+                console.log('Auto-play blocked, please click music button');
+            });
+        }, 3500);
+
+        // Gift Card Modal
+        const giftButton = document.getElementById('giftButton');
+        const giftCardModal = document.getElementById('giftCardModal');
+        const closeCard = document.getElementById('closeCard');
+        const modalHeartsContainer = document.getElementById('modalHeartsContainer');
+
+        // OPTIMIZED: Reduced heart creation frequency
+        function createModalHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'modal-heart';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            
+            const randomId = Math.random().toString(36).substr(2, 9);
+            heart.innerHTML = `
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="modalHeartGrad${randomId}" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#DDA0DD;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M50,90 C50,90 10,65 10,40 C10,25 20,15 32,15 C40,15 45,20 50,30 C55,20 60,15 68,15 C80,15 90,25 90,40 C90,65 50,90 50,90 Z" fill="url(#modalHeartGrad${randomId})"/>
+                </svg>
+            `;
+            modalHeartsContainer.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        let heartInterval;
+
+        giftButton.addEventListener('click', () => {
+            giftCardModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            // OPTIMIZED: Increased interval from 500ms to 800ms
+            heartInterval = setInterval(createModalHeart, 800);
+            
+            // Create confetti effect
+            createConfetti();
+        });
+
+        closeCard.addEventListener('click', () => {
+            giftCardModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scroll
+            clearInterval(heartInterval);
+            modalHeartsContainer.innerHTML = '';
+        });
+
+        giftCardModal.addEventListener('click', (e) => {
+            if (e.target === giftCardModal) {
+                giftCardModal.classList.remove('active');
+                document.body.style.overflow = '';
+                clearInterval(heartInterval);
+                modalHeartsContainer.innerHTML = '';
+            }
+        });
+
+        // NEW: Confetti Effect
+        function createConfetti() {
+            const colors = ['#FFB6C1', '#DDA0DD', '#FFD1DC', '#E6E6FA', '#FFC0CB'];
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.setProperty('--x', (Math.random() * 200 - 100) + 'px');
+                giftCardModal.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // OPTIMIZED: Throttled sparkle effect on mouse move
+        const createMagicSparkle = throttle((e) => {
+            if (Math.random() > 0.95) { // Reduced frequency
+                const magicSparkle = document.createElement('div');
+                magicSparkle.className = 'sparkle';
+                magicSparkle.style.left = e.clientX + 'px';
+                magicSparkle.style.top = e.clientY + 'px';
+                magicSparkle.style.position = 'fixed';
+                magicSparkle.style.pointerEvents = 'none';
+                magicSparkle.style.animationDuration = '1s';
+                document.body.appendChild(magicSparkle);
+                setTimeout(() => magicSparkle.remove(), 1000);
+            }
+        }, 100); // Throttle to max once per 100ms
+
+        document.addEventListener('mousemove', createMagicSparkle);
+
+        // Add glowing effect to elements on hover
+        const glowElements = document.querySelectorAll('.gift-button, .photo-frame, .music-control');
+        glowElements.forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.filter = 'brightness(1.2)';
+            });
+            element.addEventListener('mouseleave', function() {
+                this.style.filter = 'brightness(1)';
+            });
+        });
+
+        // NEW: Smooth scroll for gift card
+        const giftCard = document.querySelector('.gift-card');
+        if (giftCard) {
+            giftCard.style.scrollBehavior = 'smooth';
+        }
+
+        // NEW: Add ripple effect to buttons
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = event.clientX - rect.left - size / 2;
+            const y = event.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.style.position = 'absolute';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.animation = 'ripple 0.6s ease-out';
+            ripple.style.pointerEvents = 'none';
+            
+            button.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        }
+
+        giftButton.addEventListener('click', createRipple);
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
